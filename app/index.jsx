@@ -7,21 +7,13 @@ import Item from './components/Item';
 
 injectTapEventPlugin();
 
-const defaultTheme = {
-    Item: {
-        color: 'orange',
-    }
-};
-
 const clientTheme = {
     Item: {
         color: 'orange',
     }
 };
 
-const resultTheme = Object.assign(defaultTheme, clientTheme);
-
-const applicationTheme = getMuiTheme(resultTheme);
+const applicationTheme = getMuiTheme(clientTheme);
 
 
 class App extends Component {
