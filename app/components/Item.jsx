@@ -5,15 +5,14 @@ import muiThemeable from 'material-ui/styles/muiThemeable';
 
 const defaultTheme = {
     Item: {
-        color: 'orange',
+        color: 'orange'
     }
 };
-
 
 class Item extends Component {
     constructor(props, context) {
         super(props, context);
-        this.style = Object.assign(this.props.muiTheme.Item, defaultTheme)
+        this.style = Object.assign(defaultTheme, this.props.muiTheme.Item, this.props.style)
     }
     render() {
         return (
