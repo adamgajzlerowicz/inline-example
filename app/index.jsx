@@ -1,19 +1,41 @@
-import {render} from 'react-dom'
-import React from 'react';
-import {ThemeProvider} from 'react-css-themr';
-import inlineCss from './page.scss';
-import {Item} from './components/Item';
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Item from './components/Item';
 
-const contextTheme = {
-    Item: require('./theme/ItemVendor.scss'),
+injectTapEventPlugin();
+
+const defaultTheme = {
+    Item: {
+        color: 'orange',
+    }
 };
 
-render((
-    <div>
-        <Item />
-        <ThemeProvider theme={contextTheme}>
-            <Item />
-        </ThemeProvider>
-        <Item theme={inlineCss}/>
-    </div>
-), document.getElementById('app'));
+const clientTheme = {
+    Item: {
+        color: 'orange',
+    }
+};
+
+const resultTheme = Object.assign(defaultTheme, clientTheme);
+
+const applicationTheme = getMuiTheme(resultTheme);
+
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <Item />
+                <Item style={{color: 'blue'}}/>
+            </div>
+        );
+    }
+}
+
+render(
+    <MuiThemeProvider muiTheme={applicationTheme}>
+        <App />
+    </MuiThemeProvider>, document.getElementById('app'));

@@ -21,17 +21,18 @@
     "start-selenium": "java -jar ./../selenium-server-standalone-2.53.1.jar"
   },
   "dependencies": {
-    "autoprefixer": "^6.5.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "material-ui": "^0.16.0",
-    "path": "^0.12.7",
-    "redux": "^3.5.2",
     "@kadira/storybook": "^1.28.1",
+    "autoprefixer": "^6.5.0",
     "chai": "^3.5.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.15.0",
+    "material-ui": "^0.16.1",
     "mocha": "^2.4.5",
+    "path": "^0.12.7",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.5.2",
     "webpack": "^1.13.2"
   },
   "devDependencies": {
