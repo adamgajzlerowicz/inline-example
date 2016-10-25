@@ -9,19 +9,16 @@ const defaultTheme = {
     }
 };
 
-class Item extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.style = Object.assign({}, defaultTheme, this.props.muiTheme.Item, this.props.style);
-    }
+const Item = ({...props, style}) => {
 
-    render() {
-        return (
-            <div style={this.style}>
-                This is my styled component
-            </div>
-        );
-    }
+    const elementStyle = Object.assign({}, defaultTheme, props.muiTheme.Item, style);
+
+    return (
+        <div style={elementStyle}>
+            This is my styled component
+        </div>
+    );
 }
+
 
 export default muiThemeable()(Item);
