@@ -6,7 +6,8 @@ import Item from './components/Item';
 
 const applicationTheme = getMuiTheme({
     Item: {
-        color: 'orange',
+        color: 'pink',
+        backgroundColor:'gray'
     }
 });
 
@@ -15,7 +16,7 @@ render(
 
         <div>
             <Item />
-            <Item style={{color: 'blue'}}/>
+            <Item style={{color: 'blue', backgroundColor:'transparent'}}/>
         </div>
 
     </MuiThemeProvider>, document.getElementById('app'));
