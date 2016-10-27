@@ -4,34 +4,20 @@ import muiThemeable from 'material-ui/styles/muiThemeable';
 var color = require('color');
 var Radium = require('radium');
 
-
-const defaultTheme = {
-    Item: {
-        color: 'red'
-    }
-};
-
-
 var styles = {
-    base: {
-        color: '#fff',
-        transition: 'width 2s, height 2s, background-color 2s, transform 2s',
-        ':hover': {
-            background: color('#0074d9').lighten(0.2).hexString(),
-            animation: 'x 3s ease 0s infinite',
-        }
-    }
+    color: '#000',
+    backgroundColor: 'gray',
+    padding: 20,
+    textAlign:'center'
 };
 
-const Item = ({...props, style}) => {
-    const elementStyle = Object.assign({}, defaultTheme.Item, props.muiTheme.Item, style);
-    console.log(elementStyle);
+const Item = ({...props}) => {
+    const elementStyle = Object.assign({}, styles, props.muiTheme.Item, props.style);
     return (
         <div
-            style={[
-                styles.base,
+            style={
                 elementStyle
-            ]}>
+            }>
             {props.children}
         </div>
     );
